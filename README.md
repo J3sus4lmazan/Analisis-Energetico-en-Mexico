@@ -7,4 +7,6 @@ Dentro de este mismo repositorio se encuentran 2 archivos comprimidos.
 
 Asi mismo se encuentra el script de la creacion de esta base de datos en el archivo creacion_db.txt  
 
-Por otra parte el 
+Por otra parte el archivo FirstPart.ipynb contiene el codigo de python del proyecto.
+Dicho codigo requiere de las librerias indicadas en el archivo librerias_python_req.txt
+Y del archivo mexico2.json para generar un mapa cloropletico del pais.
