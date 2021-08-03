@@ -1,12 +1,10 @@
 # Analisis-Energetico-en-Mexico
 En este repositorio se muestra un proyecto academico acerca del uso energetico del pais utilizando algunas herramientas de Python.
 
-Estas son las librerias de python que se requieren
-!pip install mysql.connector
-!pip install pandas
-!pip install numpy
-!pip install matplotlib.pyplot
-!pip install seaborn
-!pip install re
-!pip install geopandas 
-!pip install tensorflow 
+Dentro de este mismo repositorio se encuentran 2 archivos comprimidos.
+1. OriginalDataSENER.zip que contiene los archivos CSV originales proporcionados por la secretaria de energia (SENER)
+2. DataSetsForDB.zip que contiene los archivos CSV con los datos listos para cargarse a una base de datos relacional.
+
+Asi mismo se encuentra el script de la creacion de esta base de datos en el archivo creacion_db.txt  
+
+Por otra parte el 
