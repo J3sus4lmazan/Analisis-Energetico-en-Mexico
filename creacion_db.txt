@@ -1,0 +1,78 @@
+CREATE DATABASE MiProyecto;
+USE miproyecto;
+CREATE TABLE GenBrutaTech (
+		GBT_ID INT PRIMARY KEY,
+        Month_Year VARCHAR (45),
+        EnergyTypeID INT,
+        MegaWatt_hourTotal DOUBLE,
+        MWatt_hourPerTech DOUBLE
+	);
+ALTER TABLE GenBrutaTech
+DROP COLUMN MWatt_hourPerTech;
+ALTER TABLE GenBrutaTech
+ADD COLUMN CapMWattPerTech DOUBLE;
+
+
+CREATE TABLE EnergyTypes (
+		EnergyTypeID INT PRIMARY KEY,
+        EnergyTypeName VARCHAR (45)
+	);
+
+CREATE TABLE Months (
+		Month_YearID VARCHAR (45) PRIMARY KEY,
+        MonthDescription VARCHAR (45)
+	);
+
+CREATE TABLE States (
+		State_ID INT PRIMARY KEY,
+        StateName VARCHAR (45)
+	);
+
+CREATE TABLE ProGasNat (
+		PGN_ID INT PRIMARY KEY,
+		Month_YearID VARCHAR (45),
+        MillionFrD DOUBLE,
+		Region VARCHAR (45),
+        ProGasNatcol VARCHAR (45),
+        State_ID INT
+	);
+ALTER TABLE ProGasNat
+DROP COLUMN ProGasNatcol; 
+ALTER TABLE ProGasNat
+DROP COLUMN State_ID;
+
+CREATE TABLE GenBruPerState (
+		GBS_ID INT PRIMARY KEY,
+        MegaWatt_hourTotal DOUBLE,
+        Month_YearID VARCHAR (45),
+        State_ID INT
+	);
+ALTER TABLE GenBruPerState
+ADD COLUMN ProGasNatState DOUBLE;
+
+CREATE TABLE ComercioInter (
+		CI_ID INT PRIMARY KEY,
+		MegaWatt_hour DOUBLE,
+        QuantityUsers DECIMAL,
+        Month_YearID VARCHAR (45),
+        Sector VARCHAR (45),
+        CentsPerKW_hour DOUBLE
+	);
+
+CREATE TABLE ComercioExter (
+		CE_ID INT PRIMARY KEY,
+        MegaWatt_hour DOUBLE,
+        Month_YearID VARCHAR (45),
+        Country VARCHAR (45),
+        IMP_EXP VARCHAR (45)
+	);
+
+CREATE TABLE EffectiveCap (
+		EC_ID INT PRIMARY KEY,
+        MegaWatt DOUBLE,
+        EnergyTypeID INT,
+        Month_YearID VARCHAR (45),
+        State_ID INT
+	);
+ALTER TABLE EffectiveCap
+DROP COLUMN EnergyTypeID;  
